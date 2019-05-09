@@ -50,27 +50,14 @@ export class GtcWcImage extends LitElement {
 </style>
 
 <div>
-  Brought to you by:
-  <a href="https://glytoucan.org"><iron-image sizing="cover" fade src="https://test.gtc.glycosmos.org/img/logo_toucan.png"></iron-image></a>
-</div>
-<div>
-  <img src="https://test.gtc.glycosmos.org/glycans/${this.accession}/image?style=${this.imagestyle}&format=${this.format}&notation=${this.notation}" />
-</div>
-<div>
   <a href="https://glytoucan.org/Structures/Glycans/${this.accession}/">${this.accession}</a>
 </div>
 <div>
-  <h2>Using sparqlist</h2>
-  <iron-ajax
-      auto
-      url="https://test.sparqlist.glycosmos.org/sparqlist/api/gtc_image?accession=${this.accession}&style=${this.imagestyle}&format=${this.format}&notation=${this.notation}"
-      handle-as="blob"
-      last-response="{{glycanimage}}"></iron-ajax>
-  <iron-list items="[[glycanimage]]" as="item">
-    <template>
-      <div>[[item]]</div>
-    </template>
-  </iron-list>
+  <h3>image tag</h3>
+  <img src="https://test.sparqlist.glycosmos.org/sparqlist/api/gtc_image?accession=${this.accession}&style=${this.imagestyle}&format=${this.format}&notation=${this.notation}" />
+  
+  <h3>Object tag</h3>
+  <object type="image/svg+xml" data="https://test.sparqlist.glycosmos.org/sparqlist/api/gtc_image?accession=${this.accession}&style=${this.imagestyle}&format=${this.format}&notation=${this.notation}" ></object>
 </div>
 `;
   }
