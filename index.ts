@@ -48,16 +48,14 @@ export class GtcWcImage extends LitElement {
     background-color: lightgray;
   }
 </style>
+<h2>String template</h2>
 
 <div>
   <a href="https://glytoucan.org/Structures/Glycans/${this.accession}/">${this.accession}</a>
 </div>
 <div>
-  <h3>image tag</h3>
-  <img src="https://test.sparqlist.glycosmos.org/sparqlist/api/gtc_image?accession=${this.accession}&style=${this.imagestyle}&format=${this.format}&notation=${this.notation}" />
-  
-  <h3>Object tag</h3>
-  <object type="image/svg+xml" data="https://test.sparqlist.glycosmos.org/sparqlist/api/gtc_image?accession=${this.accession}&style=${this.imagestyle}&format=${this.format}&notation=${this.notation}" ></object>
+  <object 
+  data="https://test.sparqlist.glycosmos.org/sparqlist/api/gtc_image?accession=${this.accession}&style=${this.imagestyle}&format=${this.format}&notation=${this.notation}" ></object>
 </div>
 `;
   }
